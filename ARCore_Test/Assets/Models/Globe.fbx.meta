@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: cdebd8a7765a87949b64c25a2e6b0e6b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Africa
+    100002: Africa_Continent
+    100004: Africa_LowPoly
+    100006: aiSkyDomeLight1
+    100008: Arm1
+    100010: Arm2
+    100012: Arm3
+    100014: Arm4
+    100016: Arm5
+    100018: Australia
+    100020: Australia_Continent
+    100022: Australia_LowPoly
+    100024: Barrel
+    100026: Base
+    100028: Base 1
+    100030: bend1Handle
+    100032: bend2Handle
+    100034: bend3Handle
+    100036: bend3Handle 1
+    100038: bend4Handle
+    100040: bend4Handle 1
+    100042: bend5Handle
+    100044: bevelPolygon1
+    100046: bevelPolygon2
+    100048: bevelPolygon3
+    100050: Box
+    100052: curve1
+    100054: Dial1
+    100056: Dial2
+    100058: Dial3
+    100060: DriveShaft
+    100062: Eurasia
+    100064: Eurasia_Continent
+    100066: Eurasia_LowPoly
+    100068: Globe
+    100070: //RootNode
+    100072: imagePlane2
+    100074: imagePlane3
+    100076: Lever
+    100078: North_America
+    100080: NorthAmerica_Continent
+    100082: NorthAmerica_LowPoly
+    100084: nurbsCircle1
+    100086: nurbsCircle2
+    100088: nurbsCircle3
+    100090: nurbsCircle4
+    100092: nurbsCircle5
+    100094: Pacific
+    100096: Pagoda
+    100098: pCube1
+    100100: pCube10
+    100102: pCube11
+    100104: pCube12
+    100106: pCube14
+    100108: pCube16
+    100110: pCube18
+    100112: pCube19
+    100114: pCube2
+    100116: pCube2 1
+    100118: pCube20
+    100120: pCube21
+    100122: pCube3
+    100124: pCube3 1
+    100126: pCube4
+    100128: pCube4 1
+    100130: pCube5
+    100132: pCube6
+    100134: pCube7
+    100136: pCube8
+    100138: pCube9
+    100140: pCylinder10
+    100142: pCylinder11
+    100144: pCylinder11 1
+    100146: pCylinder11 2
+    100148: pCylinder11 3
+    100150: pCylinder13
+    100152: pCylinder14
+    100154: pCylinder15
+    100156: pCylinder16
+    100158: pCylinder17
+    100160: pCylinder18
+    100162: pCylinder19
+    100164: pCylinder20
+    100166: pCylinder21
+    100168: pCylinder3
+    100170: pCylinder3 1
+    100172: Pipe
+    100174: Pipe1
+    100176: pPlane1
+    100178: pSphere1
+    100180: pSphere10
+    100182: pSphere11
+    100184: pSphere12
+    100186: pSphere13
+    100188: pSphere14
+    100190: pSphere2
+    100192: pSphere4
+    100194: pSphere5
+    100196: pSphere5 1
+    100198: pSphere5 2
+    100200: pSphere5 3
+    100202: pSphere6
+    100204: pSphere7
+    100206: pSphere8
+    100208: pSphere9
+    100210: pTorus2
+    100212: pTorus2 1
+    100214: South_America
+    100216: SouthAmerica_Continent
+    100218: SouthAmerica_LowPoly
+    100220: Valve
+    100222: Wall
+    100224: Wheel
+    100226: Wheel1
+    400000: Africa
+    400002: Africa_Continent
+    400004: Africa_LowPoly
+    400006: aiSkyDomeLight1
+    400008: Arm1
+    400010: Arm2
+    400012: Arm3
+    400014: Arm4
+    400016: Arm5
+    400018: Australia
+    400020: Australia_Continent
+    400022: Australia_LowPoly
+    400024: Barrel
+    400026: Base
+    400028: Base 1
+    400030: bend1Handle
+    400032: bend2Handle
+    400034: bend3Handle
+    400036: bend3Handle 1
+    400038: bend4Handle
+    400040: bend4Handle 1
+    400042: bend5Handle
+    400044: bevelPolygon1
+    400046: bevelPolygon2
+    400048: bevelPolygon3
+    400050: Box
+    400052: curve1
+    400054: Dial1
+    400056: Dial2
+    400058: Dial3
+    400060: DriveShaft
+    400062: Eurasia
+    400064: Eurasia_Continent
+    400066: Eurasia_LowPoly
+    400068: //RootNode
+    400070: Globe
+    400072: imagePlane2
+    400074: imagePlane3
+    400076: Lever
+    400078: North_America
+    400080: NorthAmerica_Continent
+    400082: NorthAmerica_LowPoly
+    400084: nurbsCircle1
+    400086: nurbsCircle2
+    400088: nurbsCircle3
+    400090: nurbsCircle4
+    400092: nurbsCircle5
+    400094: Pacific
+    400096: Pagoda
+    400098: pCube1
+    400100: pCube10
+    400102: pCube11
+    400104: pCube12
+    400106: pCube14
+    400108: pCube16
+    400110: pCube18
+    400112: pCube19
+    400114: pCube2
+    400116: pCube2 1
+    400118: pCube20
+    400120: pCube21
+    400122: pCube3
+    400124: pCube3 1
+    400126: pCube4
+    400128: pCube4 1
+    400130: pCube5
+    400132: pCube6
+    400134: pCube7
+    400136: pCube8
+    400138: pCube9
+    400140: pCylinder10
+    400142: pCylinder11
+    400144: pCylinder11 1
+    400146: pCylinder11 2
+    400148: pCylinder11 3
+    400150: pCylinder13
+    400152: pCylinder14
+    400154: pCylinder15
+    400156: pCylinder16
+    400158: pCylinder17
+    400160: pCylinder18
+    400162: pCylinder19
+    400164: pCylinder20
+    400166: pCylinder21
+    400168: pCylinder3
+    400170: pCylinder3 1
+    400172: Pipe
+    400174: Pipe1
+    400176: pPlane1
+    400178: pSphere1
+    400180: pSphere10
+    400182: pSphere11
+    400184: pSphere12
+    400186: pSphere13
+    400188: pSphere14
+    400190: pSphere2
+    400192: pSphere4
+    400194: pSphere5
+    400196: pSphere5 1
+    400198: pSphere5 2
+    400200: pSphere5 3
+    400202: pSphere6
+    400204: pSphere7
+    400206: pSphere8
+    400208: pSphere9
+    400210: pTorus2
+    400212: pTorus2 1
+    400214: South_America
+    400216: SouthAmerica_Continent
+    400218: SouthAmerica_LowPoly
+    400220: Valve
+    400222: Wall
+    400224: Wheel
+    400226: Wheel1
+    2100000: Steel2
+    2100002: Steel1
+    2100004: White
+    2100006: Iron
+    2100008: Copper
+    2100010: lambert1
+    2100012: blinn1
+    2300000: Africa
+    2300002: Africa_Continent
+    2300004: Africa_LowPoly
+    2300006: Australia
+    2300008: Australia_Continent
+    2300010: Australia_LowPoly
+    2300012: Barrel
+    2300014: Base
+    2300016: Base 1
+    2300018: bevelPolygon1
+    2300020: bevelPolygon2
+    2300022: bevelPolygon3
+    2300024: Box
+    2300026: Dial1
+    2300028: Dial2
+    2300030: Dial3
+    2300032: DriveShaft
+    2300034: Eurasia
+    2300036: Eurasia_Continent
+    2300038: Eurasia_LowPoly
+    2300040: Globe
+    2300042: Lever
+    2300044: North_America
+    2300046: NorthAmerica_Continent
+    2300048: NorthAmerica_LowPoly
+    2300050: Pacific
+    2300052: Pagoda
+    2300054: pCube1
+    2300056: pCube10
+    2300058: pCube11
+    2300060: pCube12
+    2300062: pCube14
+    2300064: pCube16
+    2300066: pCube18
+    2300068: pCube19
+    2300070: pCube2
+    2300072: pCube2 1
+    2300074: pCube20
+    2300076: pCube21
+    2300078: pCube3
+    2300080: pCube3 1
+    2300082: pCube4
+    2300084: pCube4 1
+    2300086: pCube5
+    2300088: pCube6
+    2300090: pCube7
+    2300092: pCube8
+    2300094: pCube9
+    2300096: pCylinder10
+    2300098: pCylinder11
+    2300100: pCylinder11 1
+    2300102: pCylinder11 2
+    2300104: pCylinder11 3
+    2300106: pCylinder13
+    2300108: pCylinder14
+    2300110: pCylinder15
+    2300112: pCylinder16
+    2300114: pCylinder17
+    2300116: pCylinder18
+    2300118: pCylinder19
+    2300120: pCylinder20
+    2300122: pCylinder21
+    2300124: pCylinder3
+    2300126: pCylinder3 1
+    2300128: Pipe
+    2300130: Pipe1
+    2300132: pPlane1
+    2300134: pSphere1
+    2300136: pSphere10
+    2300138: pSphere11
+    2300140: pSphere12
+    2300142: pSphere13
+    2300144: pSphere14
+    2300146: pSphere2
+    2300148: pSphere4
+    2300150: pSphere5
+    2300152: pSphere5 1
+    2300154: pSphere5 2
+    2300156: pSphere5 3
+    2300158: pSphere6
+    2300160: pSphere7
+    2300162: pSphere8
+    2300164: pSphere9
+    2300166: pTorus2
+    2300168: pTorus2 1
+    2300170: South_America
+    2300172: SouthAmerica_Continent
+    2300174: SouthAmerica_LowPoly
+    2300176: Valve
+    2300178: Wall
+    2300180: Wheel
+    2300182: Wheel1
+    3300000: Africa
+    3300002: Africa_Continent
+    3300004: Africa_LowPoly
+    3300006: Australia
+    3300008: Australia_Continent
+    3300010: Australia_LowPoly
+    3300012: Barrel
+    3300014: Base
+    3300016: Base 1
+    3300018: bevelPolygon1
+    3300020: bevelPolygon2
+    3300022: bevelPolygon3
+    3300024: Box
+    3300026: Dial1
+    3300028: Dial2
+    3300030: Dial3
+    3300032: DriveShaft
+    3300034: Eurasia
+    3300036: Eurasia_Continent
+    3300038: Eurasia_LowPoly
+    3300040: Globe
+    3300042: Lever
+    3300044: North_America
+    3300046: NorthAmerica_Continent
+    3300048: NorthAmerica_LowPoly
+    3300050: Pacific
+    3300052: Pagoda
+    3300054: pCube1
+    3300056: pCube10
+    3300058: pCube11
+    3300060: pCube12
+    3300062: pCube14
+    3300064: pCube16
+    3300066: pCube18
+    3300068: pCube19
+    3300070: pCube2
+    3300072: pCube2 1
+    3300074: pCube20
+    3300076: pCube21
+    3300078: pCube3
+    3300080: pCube3 1
+    3300082: pCube4
+    3300084: pCube4 1
+    3300086: pCube5
+    3300088: pCube6
+    3300090: pCube7
+    3300092: pCube8
+    3300094: pCube9
+    3300096: pCylinder10
+    3300098: pCylinder11
+    3300100: pCylinder11 1
+    3300102: pCylinder11 2
+    3300104: pCylinder11 3
+    3300106: pCylinder13
+    3300108: pCylinder14
+    3300110: pCylinder15
+    3300112: pCylinder16
+    3300114: pCylinder17
+    3300116: pCylinder18
+    3300118: pCylinder19
+    3300120: pCylinder20
+    3300122: pCylinder21
+    3300124: pCylinder3
+    3300126: pCylinder3 1
+    3300128: Pipe
+    3300130: Pipe1
+    3300132: pPlane1
+    3300134: pSphere1
+    3300136: pSphere10
+    3300138: pSphere11
+    3300140: pSphere12
+    3300142: pSphere13
+    3300144: pSphere14
+    3300146: pSphere2
+    3300148: pSphere4
+    3300150: pSphere5
+    3300152: pSphere5 1
+    3300154: pSphere5 2
+    3300156: pSphere5 3
+    3300158: pSphere6
+    3300160: pSphere7
+    3300162: pSphere8
+    3300164: pSphere9
+    3300166: pTorus2
+    3300168: pTorus2 1
+    3300170: South_America
+    3300172: SouthAmerica_Continent
+    3300174: SouthAmerica_LowPoly
+    3300176: Valve
+    3300178: Wall
+    3300180: Wheel
+    3300182: Wheel1
+    4300000: Barrel
+    4300002: Box
+    4300004: Wheel
+    4300006: pCube4
+    4300008: pCylinder3
+    4300010: pTorus2
+    4300012: pCube3
+    4300014: pCube2
+    4300016: Valve
+    4300018: Dial2
+    4300020: pCube5
+    4300022: Dial1
+    4300024: pCube6
+    4300026: Pipe
+    4300028: Dial3
+    4300030: pCube7
+    4300032: Base
+    4300034: Pipe1
+    4300036: Wheel1
+    4300038: pCube4
+    4300040: pCylinder3
+    4300042: pTorus2
+    4300044: pCube3
+    4300046: pCube2
+    4300048: pCube8
+    4300050: pSphere7
+    4300052: pSphere8
+    4300054: pSphere9
+    4300056: pSphere10
+    4300058: pSphere11
+    4300060: pCube9
+    4300062: pSphere12
+    4300064: pCube10
+    4300066: pSphere13
+    4300068: pSphere14
+    4300070: pCube11
+    4300072: pCube12
+    4300074: Globe
+    4300076: Africa_Continent
+    4300078: Africa
+    4300080: Africa_LowPoly
+    4300082: Eurasia_Continent
+    4300084: Eurasia
+    4300086: Eurasia_LowPoly
+    4300088: NorthAmerica_Continent
+    4300090: North_America
+    4300092: NorthAmerica_LowPoly
+    4300094: SouthAmerica_Continent
+    4300096: South_America
+    4300098: SouthAmerica_LowPoly
+    4300100: Pacific
+    4300102: Australia_Continent
+    4300104: Australia
+    4300106: Australia_LowPoly
+    4300108: pCylinder11
+    4300110: pSphere5
+    4300112: pCylinder11
+    4300114: pSphere5
+    4300116: pCylinder11
+    4300118: pSphere5
+    4300120: pCylinder11
+    4300122: pSphere5
+    4300124: pSphere4
+    4300126: pCylinder10
+    4300128: DriveShaft
+    4300130: Pagoda
+    4300132: pCylinder13
+    4300134: pCylinder14
+    4300136: pCylinder15
+    4300138: pCylinder16
+    4300140: pCylinder17
+    4300142: pCylinder18
+    4300144: pCylinder19
+    4300146: pCylinder20
+    4300148: pSphere6
+    4300150: pCylinder21
+    4300152: Lever
+    4300154: Base
+    4300156: pSphere1
+    4300158: pCube1
+    4300160: pSphere2
+    4300162: bevelPolygon1
+    4300164: bevelPolygon2
+    4300166: bevelPolygon3
+    4300168: pPlane1
+    4300170: Wall
+    4300172: pCube14
+    4300174: pCube16
+    4300176: pCube18
+    4300178: pCube19
+    4300180: pCube20
+    4300182: pCube21
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

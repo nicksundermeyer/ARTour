@@ -535,10 +535,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Prefabs:
     m_keys:
-    - image1
-    - image2
+    - TestGlobe
+    - Sphere
     m_values:
-    - {fileID: 114767062365381668, guid: ca8a1456f27e6439abb6c49e94c265d2, type: 2}
+    - {fileID: 114460511960547212, guid: 4ab5bf869793e174795da5340a4f71a3, type: 2}
     - {fileID: 114767062365381668, guid: a33b48e623a38402085d8c76e081228a, type: 2}
   FitToScanOverlay: {fileID: 1987977994}
 --- !u!4 &1709459449
