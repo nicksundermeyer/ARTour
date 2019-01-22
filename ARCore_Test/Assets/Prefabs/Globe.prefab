@@ -666,7 +666,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4075751260329828}
-  - component: {fileID: 114460511960547212}
+  - component: {fileID: 114678386559670568}
   m_Layer: 0
   m_Name: Globe
   m_TagString: Untagged
@@ -5370,7 +5370,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1646163571948308}
   m_Mesh: {fileID: 4300042, guid: cdebd8a7765a87949b64c25a2e6b0e6b, type: 3}
---- !u!114 &114460511960547212
+--- !u!114 &114678386559670568
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5378,6 +5378,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1532424669743862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f05a1ec8690434672bcbf5de46068407, type: 3}
+  m_Script: {fileID: 11500000, guid: 734e33d9acb46d0468e465a0ec53ceae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
