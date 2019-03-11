@@ -58,11 +58,11 @@ public class ARInputManager : MonoBehaviour {
 	}
 
 	public void TouchDown (Vector2 pos) {
-		// DebugWithoutRepeats("TouchDown" + pos);
 
 		// raycast to check object being touched
 		if(Raycast (pos))
 		{
+			DebugWithoutRepeats("TouchDown" + pos);
 			// create event data and send to object
 			PointerEventData pData = new PointerEventData(EventSystem.current);
 			pData.position = pos;
@@ -71,11 +71,29 @@ public class ARInputManager : MonoBehaviour {
 	}
 
 	public void TouchUp (Vector2 pos) {
-		// DebugWithoutRepeats ("TouchUp" + pos);
+
+		// if there is currently a controlled object, nullify it and call touchUp
+		if(currentObject != null)
+		{
+			DebugWithoutRepeats ("TouchUp" + pos);
+			PointerEventData pData = new PointerEventData(EventSystem.current);
+			pData.position = pos;
+			currentObject.TouchUp(pData);
+
+			currentObject = null;
+		}
 	}
 
 	public void TouchClick (Vector2 pos) {
-		// DebugWithoutRepeats ("TouchClick" + pos);
+
+		if(Raycast (pos))
+		{
+			DebugWithoutRepeats ("TouchClick" + pos);
+			// create event data and send to object
+			PointerEventData pData = new PointerEventData(EventSystem.current);
+			pData.position = pos;
+			currentObject.TouchClick(pData);
+		}
 	}
 
 	public bool Raycast (Vector2 pos) {
