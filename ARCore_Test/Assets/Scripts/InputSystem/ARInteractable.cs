@@ -8,9 +8,9 @@ public class ARInteractable : MonoBehaviour {
 
     public AugmentedImage Image;
 
-	public virtual void OnPointerClick (PointerEventData eventData) { }
+	public virtual void TouchDown (PointerEventData eventData) { }
 
-    public virtual void OnPointerUp (PointerEventData eventData) { }
+    public virtual void TouchUp (PointerEventData eventData) { }
 
-    public virtual void OnPointerDown (PointerEventData eventData) { }
+    public virtual void TouchClick (PointerEventData eventData) { }
 }
