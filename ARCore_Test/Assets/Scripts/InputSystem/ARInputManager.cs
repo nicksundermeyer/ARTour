@@ -29,13 +29,7 @@ public class ARInputManager : MonoBehaviour {
 	private Touch _lastTouch;
 
 	// currently controlled object
-	private ARInteractable currentObject;
-
-	private GraphicRaycaster m_GraphicRaycaster;
-
-	void Start() {
-		m_GraphicRaycaster = GetComponent<GraphicRaycaster>();
-	}
+	private GameObject currentObject;
 
 	// Update is called once per frame
 	void Update () {
@@ -65,81 +59,65 @@ public class ARInputManager : MonoBehaviour {
 	}
 
 	public void TouchDown (Vector2 pos) {
-		GameObject obj;
-
-		obj = RaycastGUI(pos);
-		if(obj != null) {
-			Debug.Log("UI object found: " + obj.name);
-			currentObject = obj.GetComponentInParent<ARInteractable>();
-		}
-
-		// raycast to check object being touched
-		if (Raycast (pos)) {
+		PointerEventData pData = Raycast(pos);
+		if (pData != null) {
 			// DebugWithoutRepeats ("TouchDown" + pos);
-			// create event data and send to object
-			PointerEventData pData = new PointerEventData (EventSystem.current);
-			pData.position = pos;
-			currentObject.TouchDown (pData);
+			currentObject.GetComponentInParent<ARInteractable>().OnPointerDown (pData);
 		}
 	}
 
 	public void TouchUp (Vector2 pos) {
-
-		// if there is currently a controlled object, nullify it and call touchUp
-		if (currentObject != null) {
+		PointerEventData pData = Raycast(pos);
+		if (pData != null) {
 			// DebugWithoutRepeats ("TouchUp" + pos);
-			PointerEventData pData = new PointerEventData (EventSystem.current);
-			pData.position = pos;
-			currentObject.TouchUp (pData);
-
+			currentObject.GetComponentInParent<ARInteractable>().OnPointerUp (pData);
 			currentObject = null;
 		}
 	}
 
 	public void TouchClick (Vector2 pos) {
-
-		if (Raycast (pos)) {
+		PointerEventData pData = Raycast(pos);
+		if (pData != null) {
 			// DebugWithoutRepeats ("TouchClick" + pos);
-			// create event data and send to object
-			PointerEventData pData = new PointerEventData (EventSystem.current);
-			pData.position = pos;
-			currentObject.TouchClick (pData);
+			currentObject.GetComponentInParent<ARInteractable>().OnPointerClick (pData);
 		}
 	}
 
-	public GameObject RaycastGUI (Vector2 pos) {
+	public PointerEventData Raycast (Vector2 pos) {
+		// raycast to GUI first
 		PointerEventData pointerData = new PointerEventData(EventSystem.current);
 		pointerData.position = pos;
+
 		List<RaycastResult> results = new List<RaycastResult>();
-		m_GraphicRaycaster.Raycast(pointerData, results);
+		EventSystem.current.RaycastAll(pointerData, results);
 
 		if (results.Count > 0) {
 			foreach(RaycastResult result in results)
 			{
-				if(result.gameObject.GetComponentInParent<ARInteractable>())
+				if(result.gameObject.GetComponentInParent<ARInteractable>() != null)
 				{
-					Debug.Log("Found interactable");
-					return result.gameObject;
+					pointerData.selectedObject = result.gameObject;
+					currentObject = result.gameObject;
+					return pointerData;
 				}
 			}
 		}
-		return null;
-	}
 
-	public bool Raycast (Vector2 pos) {
+		// then raycast for objects
 		Ray ray = Camera.main.ScreenPointToRay (pos);
 		RaycastHit hit;
 
 		if (Physics.Raycast (ray, out hit, float.MaxValue)) {
-			ARInteractable comp = hit.collider.gameObject.GetComponentInParent<ARInteractable> ();
+			GameObject comp = hit.collider.gameObject;
 
 			// setting current controlled object if hit
-			if (comp != null) {
+			if (comp.GetComponentInParent<ARInteractable>() != null) {
+				pointerData.selectedObject = comp;
 				currentObject = comp;
-				return true;
+				return pointerData;
 			}
 		}
-		return false;
+		return null;
 	}
 
 	public void DebugWithoutRepeats (string logMessage) {
