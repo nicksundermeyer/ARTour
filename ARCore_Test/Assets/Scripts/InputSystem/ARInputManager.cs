@@ -59,6 +59,10 @@ public class ARInputManager : MonoBehaviour {
 	}
 
 	public void TouchDown (Vector2 pos) {
+		if(RaycastGUI<IPointerDownHandler>(pos))
+		{
+			return;
+		}
 		PointerEventData pData = Raycast(pos);
 		if (pData != null) {
 			// DebugWithoutRepeats ("TouchDown" + pos);
@@ -67,6 +71,10 @@ public class ARInputManager : MonoBehaviour {
 	}
 
 	public void TouchUp (Vector2 pos) {
+		if(RaycastGUI<IPointerUpHandler>(pos))
+		{
+			return;
+		}
 		PointerEventData pData = Raycast(pos);
 		if (pData != null) {
 			// DebugWithoutRepeats ("TouchUp" + pos);
@@ -76,6 +84,10 @@ public class ARInputManager : MonoBehaviour {
 	}
 
 	public void TouchClick (Vector2 pos) {
+		if(RaycastGUI<IPointerClickHandler>(pos))
+		{
+			return;
+		}
 		PointerEventData pData = Raycast(pos);
 		if (pData != null) {
 			// DebugWithoutRepeats ("TouchClick" + pos);
@@ -83,7 +95,7 @@ public class ARInputManager : MonoBehaviour {
 		}
 	}
 
-	public PointerEventData Raycast (Vector2 pos) {
+	public bool RaycastGUI<T>(Vector2 pos) where T : IEventSystemHandler {
 		// raycast to GUI first
 		PointerEventData pointerData = new PointerEventData(EventSystem.current);
 		pointerData.position = pos;
@@ -94,15 +106,24 @@ public class ARInputManager : MonoBehaviour {
 		if (results.Count > 0) {
 			foreach(RaycastResult result in results)
 			{
-				if(result.gameObject.GetComponentInParent<ARInteractable>() != null)
+				if(ExecuteEvents.CanHandleEvent<T>(result.gameObject))
 				{
-					pointerData.selectedObject = result.gameObject;
-					currentObject = result.gameObject;
-					return pointerData;
+					if(typeof(T) == typeof(IPointerClickHandler))
+					{
+						ExecuteEvents.Execute(result.gameObject, pointerData, ExecuteEvents.pointerClickHandler);
+					}
+					else if(typeof(T) == typeof(IPointerDownHandler)) {
+						ExecuteEvents.Execute(result.gameObject, pointerData, ExecuteEvents.pointerDownHandler);
+					}
+					return true;
 				}
 			}
 		}
 
+		return false;
+	}
+
+	public PointerEventData Raycast(Vector2 pos) {
 		// then raycast for objects
 		Ray ray = Camera.main.ScreenPointToRay (pos);
 		RaycastHit hit;
@@ -112,9 +133,12 @@ public class ARInputManager : MonoBehaviour {
 
 			// setting current controlled object if hit
 			if (comp.GetComponentInParent<ARInteractable>() != null) {
-				pointerData.selectedObject = comp;
+				PointerEventData pData = new PointerEventData(EventSystem.current);
+				pData.position = pos;
+				pData.selectedObject = comp;
+
 				currentObject = comp;
-				return pointerData;
+				return pData;
 			}
 		}
 		return null;
