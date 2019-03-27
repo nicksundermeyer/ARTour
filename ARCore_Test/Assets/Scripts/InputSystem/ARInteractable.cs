@@ -13,4 +13,10 @@ public class ARInteractable : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     public virtual void OnPointerUp (PointerEventData eventData) { }
 
     public virtual void OnPointerDown (PointerEventData eventData) { }
+    
+    public virtual void TouchDragStart (PointerEventData eventData) { }
+
+    public virtual void TouchDragEnd (PointerEventData eventData) { }
+
+    public virtual void TouchDrag (PointerEventData eventData) { }
 }
