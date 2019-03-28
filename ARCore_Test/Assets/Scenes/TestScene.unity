@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _showEvents: 1
   _clickThreshold: 0.5
-  minDragDistance: 2
+  minDragDistance: 1
 --- !u!4 &506862192
 Transform:
   m_ObjectHideFlags: 0
@@ -591,7 +591,7 @@ MonoBehaviour:
     - Sphere
     m_values:
     - {fileID: 114389148413553720, guid: 4ab5bf869793e174795da5340a4f71a3, type: 2}
-    - {fileID: 114278352827105860, guid: a33b48e623a38402085d8c76e081228a, type: 2}
+    - {fileID: 114078159738457116, guid: a33b48e623a38402085d8c76e081228a, type: 2}
   FitToScanOverlay: {fileID: 1987977994}
 --- !u!4 &1709459449
 Transform:

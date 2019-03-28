@@ -9,6 +9,10 @@ public class Globe : ARInteractable {
 
 	public new AugmentedImage Image;
 
+	// variables for rotation
+	private Vector2 dragLast;
+	public float rotationSpeed = 0.5f;
+
 	public override void OnPointerDown (PointerEventData eventData) {
 		Debug.Log ("Globe OnPointerDown: " + eventData.selectedObject.gameObject.name);
 	}
@@ -23,6 +27,8 @@ public class Globe : ARInteractable {
 
 	public override void TouchDragStart(PointerEventData eventData) {
 		Debug.Log ("Globe TouchDragStart: " + eventData.position);
+
+		dragLast = eventData.position;
 	}
 
 	public override void TouchDragEnd(PointerEventData eventData) {
@@ -31,15 +37,9 @@ public class Globe : ARInteractable {
 
 	public override void TouchDrag(PointerEventData eventData) {
 		Debug.Log ("Globe TouchDrag: " + eventData.position);
-	}
 
-	public void OnRightButtonClick()
-	{
-		Debug.Log("Right Button Clicked");
-	}
-
-	public void OnLeftButtonClick()
-	{
-		Debug.Log("Left Button Clicked");
+		// rotating globe
+		transform.Rotate(new Vector3(0, (dragLast.x - eventData.position.x)*rotationSpeed, 0), Space.World);
+		dragLast = eventData.position;
 	}
 }

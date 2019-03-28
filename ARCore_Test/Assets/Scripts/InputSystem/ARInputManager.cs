@@ -150,6 +150,7 @@ public class ARInputManager : MonoBehaviour {
 	}
 
 	public bool RaycastGUI<T> (Vector2 pos) where T : IEventSystemHandler {
+		Debug.Log("RaycastGUI");
 		// raycast to GUI first
 		PointerEventData pointerData = new PointerEventData (EventSystem.current);
 		pointerData.position = pos;
@@ -176,7 +177,7 @@ public class ARInputManager : MonoBehaviour {
 	public PointerEventData Raycast (Vector2 pos) {
 		// then raycast for objects
 		Ray ray = Camera.main.ScreenPointToRay (pos);
-		// Debug.DrawRay(ray.origin, ray.direction, Color.green, 5.0f);
+		Debug.DrawRay(ray.origin, ray.direction, Color.green, 5.0f);
 		RaycastHit hit;
 
 		if (Physics.Raycast (ray, out hit, float.MaxValue)) {

@@ -115,8 +115,7 @@ public class ThesisController : MonoBehaviour {
         // Get updated augmented images for this frame.
         Session.GetTrackables<AugmentedImage> (m_TempAugmentedImages, TrackableQueryFilter.Updated);
 
-        // Create visualizers and anchors for updated augmented images that are tracking and do not previously
-        // have a visualizer. Remove visualizers for stopped images.
+        // create objects on each augmented image
         foreach (var image in m_TempAugmentedImages) {
             ARInteractable visualizer = null;
             m_Visualizers.TryGetValue (image.DatabaseIndex, out visualizer);
@@ -125,8 +124,7 @@ public class ThesisController : MonoBehaviour {
                 Anchor anchor = image.CreateAnchor (image.CenterPose);
                 Prefabs.TryGetValue (image.Name, out currentObj);
                 visualizer = (ARInteractable) Instantiate (currentObj, anchor.transform);
-                Debug.Log ("Created Visualizer: " + visualizer);
-                Debug.Log (visualizer.transform.position.x + " " + visualizer.transform.position.x + " " + visualizer.transform.position.z);
+                visualizer.transform.rotation = Quaternion.Euler(0, 0, 0);
                 visualizer.Image = image;
                 m_Visualizers.Add (image.DatabaseIndex, visualizer);
             } else if (image.TrackingState == TrackingState.Stopped && visualizer != null) {
