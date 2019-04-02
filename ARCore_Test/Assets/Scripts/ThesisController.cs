@@ -123,9 +123,13 @@ public class ThesisController : MonoBehaviour {
                 // Create an anchor to ensure that ARCore keeps tracking this augmented image.
                 Anchor anchor = image.CreateAnchor (image.CenterPose);
                 Prefabs.TryGetValue (image.Name, out currentObj);
+
                 visualizer = (ARInteractable) Instantiate (currentObj, anchor.transform);
-                visualizer.transform.rotation = Quaternion.Euler(0, 0, 0);
+                var targetPosition = Camera.main.transform.position;
+		        targetPosition.y = visualizer.transform.position.y;
+		        visualizer.transform.LookAt(targetPosition);
                 visualizer.Image = image;
+
                 m_Visualizers.Add (image.DatabaseIndex, visualizer);
             } else if (image.TrackingState == TrackingState.Stopped && visualizer != null) {
                 m_Visualizers.Remove (image.DatabaseIndex);
