@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4430062, g: 0.49219507, b: 0.57192457, a: 1}
+  m_IndirectSpecularColor: {r: 0.44300637, g: 0.4921953, b: 0.5719249, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -588,10 +588,12 @@ MonoBehaviour:
   Prefabs:
     m_keys:
     - TestGlobe
-    - Sphere
+    - MaryReed
+    - VideoInstallation
     m_values:
     - {fileID: 114389148413553720, guid: 4ab5bf869793e174795da5340a4f71a3, type: 2}
     - {fileID: 114078159738457116, guid: a33b48e623a38402085d8c76e081228a, type: 2}
+    - {fileID: 114965327436134928, guid: 8e334fb01f7276f448301f3af756df5b, type: 2}
   FitToScanOverlay: {fileID: 1987977994}
 --- !u!4 &1709459449
 Transform:
