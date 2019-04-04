@@ -4,7 +4,7 @@ using GoogleARCore;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ARInteractable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler {
+public class ARInteractable : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IBeginDragHandler, IEndDragHandler, IDragHandler {
 
     public AugmentedImage Image;
 
@@ -14,9 +14,9 @@ public class ARInteractable : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     public virtual void OnPointerDown (PointerEventData eventData) { }
     
-    public virtual void TouchDragStart (PointerEventData eventData) { }
+    public virtual void OnBeginDrag (PointerEventData eventData) { }
 
-    public virtual void TouchDragEnd (PointerEventData eventData) { }
+    public virtual void OnEndDrag (PointerEventData eventData) { }
 
-    public virtual void TouchDrag (PointerEventData eventData) { }
+    public virtual void OnDrag (PointerEventData eventData) { }
 }

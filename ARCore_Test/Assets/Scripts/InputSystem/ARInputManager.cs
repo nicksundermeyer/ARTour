@@ -115,42 +115,46 @@ public class ARInputManager : MonoBehaviour {
 	}
 
 	public void TouchDragStart (Vector2 pos) {
-
+		if(RaycastGUI<IBeginDragHandler>(pos)) {
+			return;
+		}
 		PointerEventData pData = Raycast (pos);
 		if (pData != null && currentObject != null) {
 			currentObject = pData.selectedObject;
-			currentObject.GetComponentInParent<ARInteractable> ().TouchDragStart (pData);
+			currentObject.GetComponentInParent<ARInteractable> ().OnBeginDrag (pData);
 			// DebugWithoutRepeats ("DragStart: " + currentObject.name);
 		}
 	}
 
 	public void TouchDrag (Vector2 pos) {
-		// DebugWithoutRepeats ("Drag: " + currentObject.name);
-
+		if(RaycastGUI<IDragHandler>(pos)) {
+			return;
+		}
 		PointerEventData pData = new PointerEventData (EventSystem.current);
 		pData.position = pos;
 
 		if(currentObject != null)
 		{
-			currentObject.GetComponentInParent<ARInteractable> ().TouchDrag (pData);
+			currentObject.GetComponentInParent<ARInteractable> ().OnDrag (pData);
 		}
 	}
 
 	public void TouchDragEnd (Vector2 pos) {
-		// DebugWithoutRepeats ("DragEnd: " + currentObject.name);
-
+		if(RaycastGUI<IEndDragHandler>(pos)) {
+			return;
+		}
 		PointerEventData pData = new PointerEventData (EventSystem.current);
 		pData.position = pos;
 
 		if(currentObject != null)
 		{
-			currentObject.GetComponentInParent<ARInteractable> ().TouchDragEnd (pData);
+			currentObject.GetComponentInParent<ARInteractable> ().OnEndDrag (pData);
 			currentObject = null;
 		}
 	}
 
 	public bool RaycastGUI<T> (Vector2 pos) where T : IEventSystemHandler {
-		Debug.Log("RaycastGUI");
+		// Debug.Log("RaycastGUI");
 		// raycast to GUI first
 		PointerEventData pointerData = new PointerEventData (EventSystem.current);
 		pointerData.position = pos;
@@ -165,6 +169,14 @@ public class ARInputManager : MonoBehaviour {
 						ExecuteEvents.Execute (result.gameObject, pointerData, ExecuteEvents.pointerClickHandler);
 					} else if (typeof (T) == typeof (IPointerDownHandler)) {
 						ExecuteEvents.Execute (result.gameObject, pointerData, ExecuteEvents.pointerDownHandler);
+					} else if (typeof (T) == typeof (IPointerUpHandler)) {
+						ExecuteEvents.Execute (result.gameObject, pointerData, ExecuteEvents.pointerUpHandler);
+					} else if (typeof (T) == typeof (IBeginDragHandler)) {
+						ExecuteEvents.Execute (result.gameObject, pointerData, ExecuteEvents.beginDragHandler);
+					} else if (typeof (T) == typeof (IDragHandler)) {
+						ExecuteEvents.Execute (result.gameObject, pointerData, ExecuteEvents.dragHandler);
+					} else if (typeof (T) == typeof (IEndDragHandler)) {
+						ExecuteEvents.Execute (result.gameObject, pointerData, ExecuteEvents.endDragHandler);
 					}
 					return true;
 				}

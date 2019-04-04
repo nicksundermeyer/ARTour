@@ -25,17 +25,17 @@ public class Globe : ARInteractable {
 		Debug.Log ("Globe OnPointerClick: " + eventData.selectedObject.gameObject.name);
 	}
 
-	public override void TouchDragStart(PointerEventData eventData) {
+	public override void OnBeginDrag(PointerEventData eventData) {
 		Debug.Log ("Globe TouchDragStart: " + eventData.position);
 
 		dragLast = eventData.position;
 	}
 
-	public override void TouchDragEnd(PointerEventData eventData) {
+	public override void OnEndDrag(PointerEventData eventData) {
 		Debug.Log ("Globe TouchDragEnd: " + eventData.position);
 	}
 
-	public override void TouchDrag(PointerEventData eventData) {
+	public override void OnDrag(PointerEventData eventData) {
 		Debug.Log ("Globe TouchDrag: " + eventData.position);
 
 		// rotating globe
